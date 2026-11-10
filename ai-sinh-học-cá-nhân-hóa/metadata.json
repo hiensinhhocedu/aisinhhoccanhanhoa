@@ -1,0 +1,8 @@
+{
+  "name": "AI Sinh Học khkt",
+  "description": "Hệ thống AI phát hiện lỗ hỏng kiến thức và cá nhân hóa quá trình học tập môn Sinh Học",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}

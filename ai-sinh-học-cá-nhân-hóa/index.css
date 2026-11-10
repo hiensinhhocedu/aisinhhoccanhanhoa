@@ -1,0 +1,97 @@
+/* Global responsive & mobile optimization styles */
+@layer base {
+  html {
+    -webkit-text-size-adjust: 100%;
+    -webkit-tap-highlight-color: transparent;
+    scroll-behavior: smooth;
+  }
+
+  body {
+    overscroll-behavior-y: none;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  /* Prevent auto zoom on iOS Safari when tapping inputs */
+  @media screen and (max-width: 768px) {
+    input[type="text"],
+    input[type="number"],
+    input[type="password"],
+    input[type="email"],
+    input[type="search"],
+    select,
+    textarea {
+      font-size: 16px !important;
+    }
+  }
+
+  /* Touch-friendly buttons and elements */
+  button, 
+  [role="button"],
+  a {
+    touch-action: manipulation;
+  }
+}
+
+/* Custom sleek scrollbar for modern browsers */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(156, 163, 175, 0.5);
+  border-radius: 9999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(107, 114, 128, 0.8);
+}
+
+/* Safe area insets helpers */
+.safe-top {
+  padding-top: env(safe-area-inset-top, 0px);
+}
+
+.safe-bottom {
+  padding-bottom: env(safe-area-inset-bottom, 0px);
+}
+
+/* Subtle touch feedback */
+@media (hover: none) and (pointer: coarse) {
+  .touch-feedback:active {
+    opacity: 0.85;
+    transform: scale(0.98);
+  }
+}
+
+/* Print styling for professional educational reports */
+@media print {
+  header, 
+  aside, 
+  nav, 
+  #header-timer-portal,
+  .print\:hidden {
+    display: none !important;
+  }
+  
+  body, 
+  main, 
+  #root, 
+  .min-h-screen {
+    background: #ffffff !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    overflow: visible !important;
+    min-height: auto !important;
+  }
+
+  @page {
+    size: A4 portrait;
+    margin: 12mm 15mm 15mm 15mm;
+  }
+}
